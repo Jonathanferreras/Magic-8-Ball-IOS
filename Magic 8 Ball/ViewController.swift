@@ -25,6 +25,10 @@ class ViewController: UIViewController {
         updateMagic8BallResponse()
     }
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        updateMagic8BallResponse()
+    }
+    
     func updateMagic8BallResponse(){
         magic8BallResponsesIndex = Int.random(in: 0 ... 4)
         
