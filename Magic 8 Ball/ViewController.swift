@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let magic8BallResponsesArray = ["ball1", "ball2", "ball3", "ball4", "ball5"]
+    
+    var magic8BallResponsesIndex: Int = 0
 
+    @IBOutlet weak var magic8BallImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateMagic8BallResponse()
     }
 
 
+    @IBAction func askButtonPressed(_ sender: UIButton) {
+        updateMagic8BallResponse()
+    }
+    
+    func updateMagic8BallResponse(){
+        magic8BallResponsesIndex = Int.random(in: 0 ... 4)
+        
+        magic8BallImageView.image = UIImage (named: magic8BallResponsesArray[magic8BallResponsesIndex])
+    }
+    
+    
 }
 
